@@ -1,0 +1,117 @@
+{
+    "short_name": "Smart Recharge",
+    "name": "Smart Recharge",
+    "description": "Scan for digital top up code directly using your phone or scan an image for the code. Fast and easy!",
+    "icons": [
+        {
+            "src": "./src/images/logo icon (48x48).png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./src/images/logo icon (96x96).png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./src/images/logo icon (144x144).png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./src/images/logo icon (192x192).png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }, 
+        {
+            "src": "./src/images/logo icon (256x256).png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }, 
+        {
+            "src": "./src/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "id": "./6.2.3.18/test1", 
+    "categories": ["personality", "lifestyle", "technology", "scanner", "recharge"], 
+    "start_url": "./index.html", 
+    "display": "standalone",
+    "orientation": "natural",
+    "theme_color": "#003673",
+    "background_color": "#003673", 
+    "prefer_related_applications": false, 
+    "screenshots": [
+    	{
+	    	"src": "./src/images/load page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+    	{
+	    	"src": "./src/images/main page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/menu page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/scan page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/crop page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/recharged page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/confirm page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}, 
+		{
+	    	"src": "./src/images/other number page.png",
+	    	"sizes": "720x1500",
+	    	"type": "image/png"
+		}
+    ], 
+    "share_target": {
+    	"action": "./?share-target=true", 
+    	"method": "POST", 
+    	"enctype": "multipart/form-data", 
+    	"params": {
+    		"url": "link", 
+    		"files": [
+    			{
+		    		"name": "img", 
+		    		"accept": ["image/png", ".png"]
+				}, 
+				{
+		    		"name": "img", 
+		    		"accept": ["image/jpg", ".jpg"]
+				}, 
+				{
+		    		"name": "img", 
+		    		"accept": ["image/jpeg", ".jpeg"]
+				}, 
+				{
+		    		"name": "img", 
+		    		"accept": ["image/bmp", ".bmp"]
+				}, 
+				{
+		    		"name": "img", 
+		    		"accept": ["image/pbm", ".pbm"]
+				}
+			] 
+    	} 
+    }
+}

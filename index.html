@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0">
+        <meta name="theme-color" content="#003673">
+        <link rel="manifest" href="./manifest.webmanifest">
+        <link rel="icon" href="./src/images/logo.ico" type="image/x-icon">
+        <link rel="icon" href="./src/images/logo icon (16x16).png" type="image/png" sizes="16x16">
+        <link rel="icon" href="./src/images/logo icon (32x32).png" type="image/png" sizes="32x32">
+        <link rel="icon" href="./src/images/logo icon (96x96).png" type="image/png" sizes="96x96">
+        <link rel="stylesheet" href="./index.css">
+        <script>
+        	if(/(html|smart.recharge)\/$/i.test(new URL(window.location).pathname)) {
+        		location.replace(location.href.includes("html")? location.href.replace(/\/.*$/, ""): location.href + 'index.html');
+       	 } 
+        	let url = new URL(window.location);
+        	if(url.searchParams.has("eruda"))
+				eruda.init();
+		</script>
+        <title>SMART RECHARGE - scan for digital top up code automatically. Easy and first.</title>
+    </head>
+    <body>
+        <div class="install_prompt" hidden>
+            <div class="head">
+                <div class="icon"></div>
+                <h2>Smart Recharge</h2>
+                <h3>Version info:</h3>
+                <p>Install Smart Recharge in your phone</p>
+            </div>
+            <div class="foot">
+                <button onclick="HideInstallPrompt()">CANCEL</button>
+                <button onclick="InstallApp()">INSTALL</button>
+            </div>
+        </div>
+        <section onanimationend="End(event)" id="pop-up-note" hidden></section>
+        <article id="notification-window" hidden>
+            <section id="note">
+                <div class="note_header"></div>
+                <div class="close_btn" onclick="NotificationClick(this)"></div>
+                <img class="note_img">
+                <div class="note_body"></div>
+                <section class="note_footer">
+                    <button class="note_left_btn" onclick="NotificationClick(this)"></button>
+                    <button class="note_center_btn" onclick="NotificationClick(this)"></button>
+                    <button class="note_right_btn" onclick="NotificationClick(this)"></button>
+                <section>
+            </section>
+        </article>
+        <article class="load" hidden> 
+            <div class="load_footer">
+                <div class="load_icon"></div>
+                <h2>Smart Recharge</h2>
+                <h3>Version info:</h3>
+            </div>
+            <div class="spinner"></div>
+        </article>
+        <article class="window main" hidden>
+            <div class="header">
+                <h1>SMART RECHARGE</h1>
+                <h2>Safaricom</h2>
+                <button class="about"></button>
+            </div>
+            <div class="sims">
+                <div class="sim">
+                    <input type="radio" name="sim-type" value="Safaricom" id="sim-1" checked>
+                </div>
+                <div class="sim">
+                    <input type="radio" name="sim-type" value="Airtel" id="sim-2">
+                </div>
+                <div class="sim">
+                    <input type="radio" name="sim-type" value="Telkom" id="sim-3">
+                </div>
+                <div class="sim">
+                    <label for="sim-4">Other</label>
+                    <input type="radio" name="sim-type" value="Other" id="sim-4">
+                </div>
+            </div>
+            <div class="footer">
+                <button>NEXT</button>
+                <button>TOP UP OTHER NUMBER</button>
+            </div>
+        </article>
+        <article class="window about_window" hidden>
+            <div class="head">
+                <div class="icon"></div>
+                <h2>Smart Recharge</h2>
+                <h3>Version info: V2.8 18</h3>
+            </div>
+            <div class="options">
+                <button>Share</button>
+                <hr>
+                <button>Check update</button>
+                <hr>
+                <button>Support</button>
+                <hr>
+                <button>Developer</button>
+                <hr>
+                <button>Feedback</button>
+                <hr>
+                <button>Contact</button>
+                <hr>
+                <button>Follow</button>
+                <hr>
+                <button>More apps</button>
+            </div>
+            <div class="footer">
+                <button>BACK</button>
+            </div>
+        </article>
+        <article class="window other_number" hidden>
+            <div class="header">
+                <h1>SMART RECHARGE</h1>
+                <h2>Top up another number</h2>
+            </div>
+            <div class="input_form">
+                <label>Enter the receiver's phone number</label>
+                <div class="field">
+                    <input type="tel">
+                    <button class="contact_picker disable"></button>
+                </div>
+                <div class="footer">
+                    <button class="disable">NEXT</button>
+                    <button>CANCEL</button>
+                </div>
+            </div>
+        </article>
+        <article class="window scan" hidden>
+            <div class="header">
+                <h1>SMART RECHARGE</h1>
+                <h2>Scan the top up code</h2>
+                <h3>Align the digital code within the frame to scan</h3>
+            </div>
+            <div class="scanner">
+                <video autoplay></video>
+                <div class="scanner_frame">
+                    <div class="container_frame">
+                        <div class="corner_frame"></div>
+                        <div class="corner_frame"></div>
+                        <div class="corner_frame"></div>
+                        <div class="corner_frame"></div>
+                        <div class="laser"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="visible_footer">
+                <label class="gallery" for="image-file">
+                    <input type="file" id="image-file" accept="image/*">
+                </label>
+                <button class="flashlight flashlight_off"></button>
+                <button class="menu"></button>
+            </div>
+            <div class="hidden_footer">
+                <div class="input">
+                    <label class='border'></label>
+                    <span class="width_generator" aria-hidden="true">1234 5678 9012</span>
+                    <input type="text" value="1234 5678 9012" disabled>
+                    <label class='border'></label>
+                </div>
+                <div class="text">Confirm the top up code</div>
+                <div class="footer">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+        </article>
+        <article class="window crop" hidden>
+            <div class="header">
+                <h1>SMART RECHARGE</h1>
+                <h2>Crop the image to only expose the digital code</h2>
+                <h3>Pinch to zoom. Drag to move</h3>
+            </div>
+            <div class="crop_container">
+                <img/>
+                <div class="crop_frame">
+                    <div class="top"></div>
+                    <div class="right"></div>
+                    <div class="bottom"></div>
+                    <div class="left"></div>
+                </div>
+            </div>
+            <div class="footer">
+                <button>NEXT</button>
+                <button>CANCEL</button>
+            </div>
+        </article>
+        <article class="window recharged" hidden>
+            <div class="head">
+                <div class="icon"></div>
+                <h2>Smart Recharge</h2>
+            </div>
+            <div>
+                <div class="success_icon"></div>
+                <p>Thank you for using Smart Recharge</p>
+                <p>Please check service provider notification or SMS for recharge results</p>
+            </div>
+            <div class="footer">
+                <button>CONTINUE RECHARGING</button>
+                <button>BACK TO MENU</button>
+            </div>
+        </article>
+        <script src="./index.js"></script>
+    </body>
+</html>

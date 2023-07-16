@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "homepage": "https://Sidimadtv.github.io/todo-List",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
